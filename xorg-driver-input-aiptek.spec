@@ -1,12 +1,12 @@
 Summary:	X.org input driver for Aiptek HyperPen USB-based tablet devices
 Summary(pl.UTF-8):	Sterownik wejściowy X.org dla tabletów Aiptek HyperPen na USB
 Name:		xorg-driver-input-aiptek
-Version:	1.4.0
+Version:	1.4.1
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-input-aiptek-%{version}.tar.bz2
-# Source0-md5:	fd1044fde3b6bedfb9294db0d1b887f3
+# Source0-md5:	8231f6ce1c477eac653c9deb527fa3cb
 URL:		http://aiptektablet.sourceforge.net/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -47,7 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/xorg/modules/*/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/xorg/modules/*/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
